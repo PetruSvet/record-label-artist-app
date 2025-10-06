@@ -1,48 +1,54 @@
 <?php
-
+ 
 namespace Database\Seeders;
-
+ 
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+ 
+class DatabaseSeeder extends seeder{
+    public function run(): void{
+        $this->call(GameSeeder::Class);
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// When Columns is fixed with images and decimals use (php artisan migrate) and (php artisan db:seed)
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Carbon\Carbon;
-
-class ArtistSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
+use App\Models\Game;
+ 
+class GameSeeder extends Seeder{
+    public function run(): void{
+        $currentTimestamp = Carbon::now();
         DB::table('artists')->insert([
             [
-                'name' => 'Alice Harmony',
-                'genre' => 'Pop',
-                'debut_year' => 2015,
-                'social_media_handle' => '@aliceharmony',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'The Rockers',
-                'genre' => 'Rock',
-                'debut_year' => 2010,
-                'social_media_handle' => '@therockersband',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'name' => 'DJ Nova',
+                'name' => 'Martin Garrix',
                 'genre' => 'Electronic',
-                'debut_year' => 2018,
-                'social_media_handle' => '@djnova',
+                'debut_year' => 2012,
+                'social_media_handle' => '@martingarrix',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'name' => 'Luna Waves',
-                'genre' => 'Indie',
+                'name' => 'John Sinnott',
+                'genre' => 'Jazz',
                 'debut_year' => 2020,
-                'social_media_handle' => '@lunawaves',
+                'social_media_handle' => '@joh.nsinnott',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Tupac Shakur',
+                'genre' => 'West Coast Hip-Hop',
+                'debut_year' => 1989,
+                'social_media_handle' => '@2pac',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Michael Jackson',
+                'genre' => 'Pop',
+                'debut_year' => 1965,
+                'social_media_handle' => '@MichaelJackson',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
