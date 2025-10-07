@@ -10,10 +10,11 @@ class ArtistController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+public function index()
+{
+    $artists = Artist::all();
+    return view('artists.index', compact('artists'));
+}
 
     /**
      * Show the form for creating a new resource.

@@ -18,6 +18,7 @@ public function up(): void
         $table->year('debut_year')->nullable();
         $table->string('social_media_handle')->nullable();
         $table->timestamps();
+        $table->string('profile_picture')->nullable();
     });
 }
 
