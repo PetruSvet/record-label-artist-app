@@ -37,7 +37,7 @@ public function index()
      */
     public function show(Artist $artist)
     {
-        //
+        return view('artists.show')->with('artist', $artist);
     }
 
     /**

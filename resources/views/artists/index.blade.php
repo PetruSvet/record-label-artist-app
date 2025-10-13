@@ -16,9 +16,9 @@
         <x-artist-card
             :name="$artist->name"
             :genre="$artist->genre"
-            :debut-year="$artist->debut_year"
-            :social-media-handle="$artist->social_media_handle"
-            :profile-picture="$artist->profile_picture"
+            :debut_year="$artist->debut_year"
+            :social_media_handle="$artist->social_media_handle"
+            :profile_picture="$artist->profile_picture"
         />
     </a>
 @endforeach

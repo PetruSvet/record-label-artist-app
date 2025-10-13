@@ -21,7 +21,8 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@martingarrix',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'martingarrix.jpeg'
+                'profile_picture' => 'martingarrix.jpeg',
+                'description' => 'Martijn Gerard Garritsen, known professionally by his trimmed name as Martin Garrix, is a Dutch DJ and record producer. He was ranked number one on DJ Mags Top 100 DJs list for three consecutive years. He is best known for his singles Animals, In the Name of Love, and Scared to Be Lonely'
             ],
             [
                 'name' => 'John Sinnott',
@@ -30,7 +31,8 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@joh.nsinnott',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'johnsinnott.jpeg.jpg'
+                'profile_picture' => 'johnsinnott.jpeg.jpg',
+                'description' => 'The Goat'
             ],
             [
                 'name' => 'Tupac Shakur',
@@ -39,7 +41,8 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@2pac',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'tupac.jpeg'
+                'profile_picture' => 'tupac.jpeg',
+                'description' => 'Tupac Amaru Shakur, also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He is regarded as one of the greatest rappers of all time, one of the most influential musical artists of the 20th century, and a prominent political activist for Black America'
             ],
             [
                 'name' => 'Michael Jackson',
@@ -48,7 +51,8 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@MichaelJackson',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'michaeljackson.jpeg'
+                'profile_picture' => 'michaeljackson.jpeg',
+                'description' => 'Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the "King of Pop", he is widely regarded as one of the most culturally significant figures of the 20th century'
             ],
         ]);
     }
