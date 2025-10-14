@@ -21,7 +21,7 @@ public function index()
      */
     public function create()
     {
-        //
+        return view('artists.create');
     }
 
     /**
@@ -37,8 +37,9 @@ public function index()
      */
     public function show(Artist $artist)
     {
-        return view('artists.show')->with('artist', $artist);
+        return view('artists.show', compact('artist'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

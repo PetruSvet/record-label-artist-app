@@ -1,12 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-x1 text-gray-800 leading tight">
-            {{ __('All Books') }}
+        <h2 class="font-semibold text-x1 text-gray-800 leading-tight">
+            {{ __('Artist Details') }}
         </h2>
-</x-slot>
+    </x-slot>
 
     <div class="container mx-auto px-4 py-8">
-        <x-artist-card 
+
+        <x-artist-details 
             :name="$artist->name" 
             :genre="$artist->genre" 
             :debut_year="$artist->debut_year" 
@@ -15,4 +16,4 @@
             :description="$artist->description"
         />
     </div>
-</x-layouts.app>
+</x-app-layout>

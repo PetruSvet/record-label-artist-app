@@ -11,18 +11,22 @@
                 <div class="p-6 text-gray-900">
                     <h3 class="font-semibold text-lg mb-4">List of Artists:</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-@foreach($artists as $artist)
-    <a href="{{ route('artists.show', $artist) }}">
-        <x-artist-card
-            :name="$artist->name"
-            :genre="$artist->genre"
-            :debut_year="$artist->debut_year"
-            :social_media_handle="$artist->social_media_handle"
-            :profile_picture="$artist->profile_picture"
-        />
-    </a>
-@endforeach
+                        @foreach($artists as $artist)
+                        <div>
+                            <a href="{{ route('artists.show', $artist) }}">
+                            
 
+                                <x-artist-card
+                                    :name="$artist->name"
+                                    :genre="$artist->genre"
+                                    :debut_year="$artist->debut_year"
+                                    :social_media_handle="$artist->social_media_handle"
+                                    :profile_picture="$artist->profile_picture"
+                                    
+                                />
+                            </a>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

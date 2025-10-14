@@ -22,7 +22,7 @@ class ArtistSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
                 'profile_picture' => 'martingarrix.jpeg',
-                'description' => 'Martijn Gerard Garritsen, known professionally by his trimmed name as Martin Garrix, is a Dutch DJ and record producer. He was ranked number one on DJ Mags Top 100 DJs list for three consecutive years. He is best known for his singles Animals, In the Name of Love, and Scared to Be Lonely'
+                'description' => 'Martijn Gerard Garritsen, known professionally by his trimmed name as Martin Garrix, is a Dutch DJ and record producer. He was ranked number one on DJ Mags Top 100 DJs list for three consecutive years.'
             ],
             [
                 'name' => 'John Sinnott',
@@ -42,7 +42,7 @@ class ArtistSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
                 'profile_picture' => 'tupac.jpeg',
-                'description' => 'Tupac Amaru Shakur, also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He is regarded as one of the greatest rappers of all time, one of the most influential musical artists of the 20th century, and a prominent political activist for Black America'
+                'description' => 'Tupac Amaru Shakur, also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He is regarded as one of the greatest rappers of all time'
             ],
             [
                 'name' => 'Michael Jackson',

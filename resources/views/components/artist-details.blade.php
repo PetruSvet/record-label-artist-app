@@ -3,11 +3,11 @@
     'genre', 
     'debut_year', 
     'social_media_handle', 
-    'profile_picture' => null
+    'profile_picture' => null,
+    'description' => null
 ])
 
 <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer p-5">
-    
     @if($profile_picture)
         <img 
             src="{{ asset('images/artists/' . $profile_picture) }}" 
@@ -20,14 +20,16 @@
         </div>
     @endif
 
-    
     <div class="text-center mt-4">
         <h2 class="text-xl font-bold text-gray-800">{{ $name }}</h2>
         <p class="text-gray-500">{{ $genre }} • Debut: {{ $debut_year }}</p>
-        @if($social_media_handle)
-            <a href="https://twitter.com/{{ $social_media_handle }}" target="_blank" class="text-blue-500 hover:underline mt-2 block">
-                @{{ $social_media_handle }}
-            </a>
-        @endif
+    @if($social_media_handle)
+        <p class="text-blue-500 hover:underline mt-2">
+            <a href="{{ $social_media_handle }}" target="_blank"> {{ $social_media_handle }}</a>
+        </p>
+    @endif
+@if($description)
+    <p class="text-gray-700 mt-3">{{ $description }}</p>
+@endif
     </div>
 </div>
