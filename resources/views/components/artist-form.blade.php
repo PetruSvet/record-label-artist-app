@@ -1,21 +1,12 @@
-@props(['action', 'method'])
-
-{{-- 
-    The form takes two props:
-    - $action → the route where the form submits to (e.g., route('artists.store'))
-    - $method → the HTTP method (e.g., 'POST', 'PUT', 'PATCH')
---}}
+@props(['action', 'method', 'artist'])
 
 <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
-    {{-- Include CSRF token for security (required for all POST forms in Laravel) --}}
     @csrf
-
-    {{-- If method is PUT or PATCH, spoof it for Laravel (used for updates) --}}
     @if($method === 'PUT' || $method === 'PATCH')
         @method($method)
     @endif
 
-    {{-- Artist Name Field --}}
+     {{-- Artist Name --}}
     <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-700">Artist Name</label>
         <input
@@ -96,13 +87,14 @@
     {{-- Profile Picture Upload --}}
     <div class="mb-4">
         <label for="profile_picture" class="block text-sm font-medium text-gray-700">Profile Picture</label>
-        <input
-            type="file"
-            name="profile_picture"
-            id="profile_picture"
-            {{ isset($artist) ? '' : 'required' }}
-            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-        />
+    <input
+        type="file"
+        name="profile_picture"
+        id="profile_picture"
+        {{ isset($artist) ? '' : 'required' }}
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+    />
+
         @error('profile_picture')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
