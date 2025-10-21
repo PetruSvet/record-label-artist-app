@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists.index');
 Route::get('/artists/create', [ArtistController::class, 'create'])->name('artists.create');
 Route::post('/artists', [ArtistController::class, 'store'])->name('artists.store');

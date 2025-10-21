@@ -84,6 +84,21 @@
         @enderror
     </div>
 
+    <div class="mb-4">
+    <label for="embed" class="block text-sm font-medium text-gray-700">YouTube Video Embed URL</label>
+    <input
+        type="text"
+        name="embed"
+        id="embed"
+        value="{{ old('embed', $artist->embed ?? '') }}"
+        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+    />
+    @error('embed')
+        <p class="text-sm text-red-600">{{ $message }}</p>
+    @enderror
+    </div>
+
+
     {{-- Profile Picture Upload --}}
     <div class="mb-4">
         <label for="profile_picture" class="block text-sm font-medium text-gray-700">Profile Picture</label>
@@ -106,6 +121,7 @@
             <img src="{{ asset('images/artists/' . $artist->profile_picture) }}" alt="{{ $artist->name }}" class="w-24 h-24 object-cover rounded-full">
         </div>
     @endisset
+
 
     {{-- Submit Button --}}
     <div>

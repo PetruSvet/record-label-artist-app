@@ -8,7 +8,10 @@
     <p class="text-gray-600">{{ $genre }} &bull; Debut: {{ $debut_year }}</p>
     @if($social_media_handle)
         <p class="text-blue-500 hover:underline mt-2">
-            <a href="{{ $social_media_handle }}" target="_blank"> {{ $social_media_handle }}</a>
+            <a href="https://en.wikipedia.org/wiki/{{ $name }}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+    {{ $social_media_handle }}
+</a>
+
         </p>
     @endif
 </div>

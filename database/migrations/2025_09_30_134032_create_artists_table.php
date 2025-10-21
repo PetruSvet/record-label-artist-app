@@ -20,6 +20,7 @@ public function up(): void
         $table->timestamps();
         $table->string('profile_picture')->nullable();
         $table->string('description')->nullable();
+        $table->string('embed')->nullable();
     });
 }
 

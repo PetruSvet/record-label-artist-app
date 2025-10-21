@@ -14,6 +14,7 @@
             :social_media_handle="$artist->social_media_handle" 
             :profile_picture="$artist->profile_picture"
             :description="$artist->description"
+            :embed="$artist->embed"
         />
     </div>
 </x-app-layout>

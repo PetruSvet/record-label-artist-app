@@ -17,5 +17,6 @@ class Artist extends Model
         'social_media_handle',
         'description',
         'profile_picture',
+        'embed',
     ];
 }

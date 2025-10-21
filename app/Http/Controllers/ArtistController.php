@@ -19,7 +19,7 @@ public function index()
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+     function create()
     {
         return view('artists.create');
     }
@@ -37,6 +37,7 @@ public function index()
         'social_media_handle' => 'nullable|string|max:255',
         'description' => 'nullable|string',
         'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', 
+        'embed' => 'nullable|url',
     ]);
 
     // If a profile picture was uploaded, store it in public/images/artists
@@ -53,6 +54,7 @@ public function index()
         'social_media_handle' => $request->social_media_handle,
         'description' => $request->description,
         'profile_picture' => $imageName,
+        'embed' => $request->embed,
     ]);
 
     // Redirect back to the artist index (list) page with a success message
@@ -72,29 +74,59 @@ public function index()
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Artist $artist)
     {
-        // Find the artist by ID or fail if it doesn’t exist
-        $artist = \App\Models\Artist::findOrFail($id);
-
-        // Return the edit view with the artist data
         return view('artists.edit', compact('artist'));
     }
+
 
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Artist $artist)
-    {
-        //
+public function update(Request $request, Artist $artist)
+{
+    
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'genre' => 'required|string|max:255',
+        'debut_year' => 'required|integer|min:1900|max:' . date('Y'),
+        'social_media_handle' => 'nullable|string|max:255',
+        'description' => 'nullable|string',
+        'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+        'embed' => 'required|string'
+    ]);
+
+    
+    if ($request->hasFile('profile_picture')) {
+        $imageName = time() . '_' . $request->file('profile_picture')->getClientOriginalName();
+        $request->file('profile_picture')->move(public_path('images/artists'), $imageName);
+
+        
+        $validatedData['profile_picture'] = $imageName;
     }
 
+    
+    $artist->update($validatedData);
+
+    
+    return to_route('artists.index')->with('success', 'Artist updated successfully!');
+}
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Artist $artist)
-    {
-        //
+public function destroy(Artist $artist)
+{
+    // ✅ Optional: Delete the profile picture file if it exists
+    if ($artist->profile_picture && file_exists(public_path('images/artists/' . $artist->profile_picture))) {
+        unlink(public_path('images/artists/' . $artist->profile_picture));
     }
+
+    // ✅ Delete the artist record from the database
+    $artist->delete();
+
+    // ✅ Redirect back to the artist index with a success message
+    return to_route('artists.index')->with('success', 'Artist deleted successfully!');
+}
+
 }
