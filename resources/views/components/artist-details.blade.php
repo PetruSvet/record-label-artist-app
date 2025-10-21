@@ -25,7 +25,7 @@
         {{-- Social media link --}}
         @if($social_media_handle)
             <p class="mt-2">
-                <a href="https://en.wikipedia.org/wiki/{{ $social_media_handle }}" 
+                <a href="https://en.wikipedia.org/wiki/{{ $name }}" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="text-blue-500 hover:underline">

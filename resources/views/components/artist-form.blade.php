@@ -85,7 +85,7 @@
     </div>
 
     <div class="mb-4">
-    <label for="embed" class="block text-sm font-medium text-gray-700">YouTube Video Embed URL</label>
+    <label for="embed" class="block text-sm font-medium text-gray-700">YouTube Video Embed URL "MAKE SURE YOUR YOUTUBE LINK HAS 'embed' IN IT INSTEAD OF 'watch', FOR EXAMPLE: https://www.youtube.com/embed?v=czLQoG01PFs&list=RDczLQoG01PFs&start_radio=1</label>
     <input
         type="text"
         name="embed"

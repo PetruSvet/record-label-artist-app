@@ -10,23 +10,17 @@ class ArtistController extends Controller
     /**
      * Display a listing of the resource.
      */
-public function index()
-{
-    $artists = Artist::all();
-    return view('artists.index', compact('artists'));
-}
+    public function index()
+    {
+        $artists = Artist::all();
+        return view('artists.index', compact('artists'));
+    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
      function create()
     {
         return view('artists.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
 {
     
@@ -57,35 +51,24 @@ public function index()
         'embed' => $request->embed,
     ]);
 
-    // Redirect back to the artist index (list) page with a success message
     return to_route('artists.index')->with('success', 'Artist created successfully!');
-}
+    }
 
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Artist $artist)
     {
         return view('artists.show', compact('artist'));
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Artist $artist)
     {
         return view('artists.edit', compact('artist'));
     }
 
 
-
-    /**
-     * Update the specified resource in storage.
-     */
-public function update(Request $request, Artist $artist)
-{
+    public function update(Request $request, Artist $artist)
+    {
     
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
@@ -112,20 +95,15 @@ public function update(Request $request, Artist $artist)
     
     return to_route('artists.index')->with('success', 'Artist updated successfully!');
 }
-    /**
-     * Remove the specified resource from storage.
-     */
-public function destroy(Artist $artist)
-{
-    // ✅ Optional: Delete the profile picture file if it exists
+    
+    public function destroy(Artist $artist)
+    {
     if ($artist->profile_picture && file_exists(public_path('images/artists/' . $artist->profile_picture))) {
         unlink(public_path('images/artists/' . $artist->profile_picture));
     }
 
-    // ✅ Delete the artist record from the database
     $artist->delete();
 
-    // ✅ Redirect back to the artist index with a success message
     return to_route('artists.index')->with('success', 'Artist deleted successfully!');
 }
 
