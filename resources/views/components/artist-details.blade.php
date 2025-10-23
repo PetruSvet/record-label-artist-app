@@ -42,6 +42,7 @@
 
     {{-- Embedded video --}}
     @if($embed)
+        <!-- Youtube video embed -->
         <div class="mt-6 relative pb-[56.25%] h-0">
             <iframe 
                 class="absolute top-0 left-0 w-full h-full rounded-lg"

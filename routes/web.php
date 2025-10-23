@@ -28,4 +28,5 @@ Route::get('/artists/{artist}/edit', [ArtistController::class, 'edit'])->name('a
 Route::put('/artists/{artist}', [ArtistController::class, 'update'])->name('artists.update');
 Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->name('artists.destroy');
 
+
 require __DIR__.'/auth.php';

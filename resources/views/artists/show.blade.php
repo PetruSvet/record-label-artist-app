@@ -1,12 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-x1 text-gray-800 leading-tight">
+        <h2 class="font-semibold text-x1 text-gray-800 leading-tight">          <!-- Page header showing the title -->
             {{ __('Artist Details') }}
         </h2>
     </x-slot>
 
-    <div class="container mx-auto px-4 py-8">
-
+    <div class="container mx-auto px-4 py-8">                                   <!-- Display artist -->
         <x-artist-details 
             :name="$artist->name" 
             :genre="$artist->genre" 
