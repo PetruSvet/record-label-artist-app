@@ -32,22 +32,26 @@
                             </a>
 
                             <!-- Edit and delete buttons -->
-                            <div class="mt-4 flex space-x-2">
-                                <!-- Edit button linking to edit page -->
-                                <a href="{{ route('artists.edit', $artist) }}" class="text-gray-600 bg-orange-300 hover:bg-orange-700 font-bold py-2 px-4 rounded">
-                                    Edit
-                                </a>
 
-                                <!-- Delete form to remove artist -->
-                                <form action="{{ route('artists.destroy', $artist) }}" method="POST"
-                                      onsubmit="return confirm('Are you sure you want to delete this artist?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-gray-600 font-bold py-2 px-4 rounded"> 
-                                        Delete
-                                    </button>
-                                </form>
-                            </div>
+                            @if(auth()->user()->role === 'admin')
+
+                                <div class="mt-4 flex space-x-2">
+                                    <!-- Edit button linking to edit page -->
+                                    <a href="{{ route('artists.edit', $artist) }}" class="text-gray-600 bg-orange-300 hover:bg-orange-700 font-bold py-2 px-4 rounded">
+                                        Edit
+                                    </a>
+
+                                    <!-- Delete form to remove artist -->
+                                    <form action="{{ route('artists.destroy', $artist) }}" method="POST"
+                                          onsubmit="return confirm('Are you sure you want to delete this artist?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-gray-600 font-bold py-2 px-4 rounded"> 
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                         @endforeach
                     </div>

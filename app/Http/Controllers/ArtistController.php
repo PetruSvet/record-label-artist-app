@@ -17,6 +17,9 @@ class ArtistController extends Controller
     
     function create()
     {
+        if (auth()->user()->role !== 'admin') {
+            return redirect()->route('books.index')->width('error', 'Access Denied.');
+        }
         return view('artists.create');        // Show form to create new artist
     }
 

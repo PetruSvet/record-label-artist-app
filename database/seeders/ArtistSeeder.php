@@ -21,7 +21,7 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@martingarrix',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'martingarrix.jpeg',
+                'profile_picture' => '1762266969_channels4_profile.jpeg',
                 'description' => 'Martijn Gerard Garritsen, known professionally by his trimmed name as Martin Garrix, is a Dutch DJ and record producer. He was ranked number one on DJ Mags Top 100 DJs list for three consecutive years.'
             ],
             [
@@ -31,7 +31,7 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@joh.nsinnott',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'johnsinnott.jpeg.jpg',
+                'profile_picture' => '1761172637_image.png',
                 'description' => 'The Goat'
             ],
             [
@@ -41,7 +41,7 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@2pac',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'tupac.jpeg',
+                'profile_picture' => '1762267560_2pac_edit_cropped_further.jpeg',
                 'description' => 'Tupac Amaru Shakur, also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He is regarded as one of the greatest rappers of all time'
             ],
             [
@@ -51,7 +51,7 @@ class ArtistSeeder extends Seeder
                 'social_media_handle' => '@MichaelJackson',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'profile_picture' => 'michaeljackson.jpeg',
+                'profile_picture' => '1762267662_Michael_Jackson_1983_(3x4_cropped)_(contrast).jpeg',
                 'description' => 'Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the "King of Pop", he is widely regarded as one of the most culturally significant figures of the 20th century'
             ],
         ]);

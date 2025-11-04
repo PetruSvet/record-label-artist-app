@@ -17,10 +17,13 @@
                     </x-nav-link>
                     <x-nav-link :href="route('artists.index')" :activate="request()->routeIs('artists.index')">
                         {{__('View Artists')}}
-                    </x-nav-link>
+                    </x-nav-link> 
+                    <!-- create link for admins only -->
+                    @if(auth()->user()->role === 'admin')
                                         <x-nav-link :href="route('artists.create')" :activate="request()->routeIs('artists.create')">
                         {{__('Create Artist')}}
                     </x-nav-link>
+                    @endif
                 </div>
             </div>
  
