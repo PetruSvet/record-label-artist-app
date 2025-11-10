@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,8 @@ Route::get('/artists/{artist}', [ArtistController::class, 'show'])->name('artist
 Route::get('/artists/{artist}/edit', [ArtistController::class, 'edit'])->name('artists.edit');
 Route::put('/artists/{artist}', [ArtistController::class, 'update'])->name('artists.update');
 Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->name('artists.destroy');
+Route::resource('artists', ArtistController::class);                              // one to many relationship artist -> songs
+Route::resource('songs', SongController::class)->except(['index', 'show']);
 
 
 require __DIR__.'/auth.php';

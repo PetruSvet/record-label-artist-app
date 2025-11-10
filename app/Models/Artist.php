@@ -9,7 +9,7 @@ class Artist extends Model
 {
     use HasFactory;
 
-    //allow mass assignment for these fields
+    // allow mass assignment for these fields
     protected $fillable = [
         'name',
         'genre',
@@ -19,4 +19,10 @@ class Artist extends Model
         'profile_picture',
         'embed',
     ];
+
+    // relationship: one artist has many songs
+    public function songs()
+    {
+        return $this->hasMany(Song::class);
+    }
 }

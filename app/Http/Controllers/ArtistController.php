@@ -58,11 +58,13 @@ class ArtistController extends Controller
         return to_route('artists.index')->with('success', 'Artist created successfully!');
     }
 
-    // Show single artist details
+    // Show single artist and song details
     public function show(Artist $artist)
     {
-        return view('artists.show', compact('artist'));
+        $songs = $artist->songs; // define this first
+        return view('artists.show', compact('artist', 'songs'));
     }
+
 
     // Show form to edit an artist
     public function edit(Artist $artist)
@@ -104,4 +106,5 @@ class ArtistController extends Controller
         $artist->delete();
         return to_route('artists.index')->with('success', 'Artist deleted successfully!');
     }
+
 }
