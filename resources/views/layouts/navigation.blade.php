@@ -24,6 +24,13 @@
                         {{__('Create Artist')}}
                     </x-nav-link>
                     @endif
+                    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-grey text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">ERD <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                    </button>
+                    <div id="dropdownHover" class="bg-white  rounded-lg shadow-sm w-screen ">
+                        <img src="{{ asset('images/image.png') }}" alt="ERD Diagram"> 
+                    </div>
                 </div>
             </div>
  

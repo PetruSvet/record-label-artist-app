@@ -32,5 +32,7 @@
                 {{ $slot }}
             </main>
         </div>
+<!-- flowbite link to show the dropdown img in navigation.blade.php -->
+        <script src="https://unpkg.com/flowbite@2.5.2/dist/flowbite.min.js"></script> 
     </body>
 </html>
