@@ -11,19 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recordlabel_artist', function (Blueprint $table) {
-            
-        $table->foreignId('artist_id')->constrained()->onDelete('cascade');
-        $table->foreignId('recordlabel_id')->constrained()->onDelete('cascade');
+Schema::create('record_labels', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->timestamps();
+});
 
-        });
-    }
+
+ }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('recordlabel_artist');
+        Schema::dropIfExists('record_labels');
     }
 };
