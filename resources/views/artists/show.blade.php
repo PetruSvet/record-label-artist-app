@@ -35,7 +35,9 @@
         <tr class="hover:bg-slate-100">
             <td class="border px-4 py-2">{{ $song->title }}</td>
             <td class="border px-4 py-2">{{ $song->release_date ? \Carbon\Carbon::parse($song->release_date)->format('F d, Y') : '-' }}</td>
-            <td class="border px-4 py-2">{{ $song->record_label ?? '-' }}</td>
+
+
+
 
          
         </tr>

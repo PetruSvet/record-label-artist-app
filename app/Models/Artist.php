@@ -28,7 +28,13 @@ class Artist extends Model
 
 public function recordLabels()
 {
-    return $this->belongsToMany(RecordLabel::class, 'recordlabel_artist');
+        return $this->belongs(
+        Recordlabel::class,
+        'artist_recordlabel',
+        'artist_id',
+        'release_date',
+        'recordlabel_id'
+    );
 }
 
 }

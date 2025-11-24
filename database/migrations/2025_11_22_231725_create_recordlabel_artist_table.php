@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('recordlabel_artist', function (Blueprint $table) {
+Schema::create('artist_recordlabel', function (Blueprint $table) {
     $table->id();
     $table->foreignId('artist_id')->constrained()->onDelete('cascade');
-    $table->foreignId('record_label_id')->constrained('record_labels')->onDelete('cascade');
+    $table->foreignId('recordlabel_id')->constrained('recordlabels')->onDelete('cascade');
     $table->timestamps();
 });
 
@@ -25,6 +25,6 @@ Schema::create('recordlabel_artist', function (Blueprint $table) {
      */
     public function down(): void
     {
-        Schema::dropIfExists('recordlabel_artist');
+        Schema::dropIfExists('artist_recordlabel');
     }
 };

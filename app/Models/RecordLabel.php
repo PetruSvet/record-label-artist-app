@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class RecordLabel extends Model
+class Recordlabel extends Model
 {
     use HasFactory;
 
@@ -19,6 +19,11 @@ class RecordLabel extends Model
     // Relationship: a record label can have many artists
     public function artists()
     {
-        return $this->belongsToMany(Artist::class, 'recordlabel_artist');
+            return $this->belongsToMany(
+        Artist::class,
+        'recordlabel_artist',
+        'recordlabel_id',
+        'artist_id'
+    );
     }
 }

@@ -13,7 +13,8 @@ class Song extends Model
         'title',
         'artist_id',
         'release_date',
-        'record_label',
+        'genre',
+        'duration',
     ];
 
 
@@ -21,4 +22,10 @@ class Song extends Model
     {
         return $this->belongsTo(Artist::class);
     }
+
+    public function recordLabel()
+    {
+    return $this->belongsTo(Recordlabel::class);
+    }
+
 }

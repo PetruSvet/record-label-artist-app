@@ -13,14 +13,13 @@ public function up(): void
 {
     Schema::table('songs', function (Blueprint $table) {
         $table->date('release_date')->nullable();
-        $table->string('record_label')->nullable();
     });
 }
 
 public function down(): void
 {
     Schema::table('songs', function (Blueprint $table) {
-        $table->dropColumn(['release_date', 'record_label']);
+        $table->dropColumn(['release_date']);
     });
 }
 };

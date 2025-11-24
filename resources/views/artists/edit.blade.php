@@ -23,13 +23,6 @@
                 <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                 <input type="text" name="title" placeholder="Song title" class="border p-2 rounded w-full" required>
                 <input type="date" name="release_date" placeholder="Release date" class="border p-2 rounded w-full">
-                <select name="record_label" class="border p-2 rounded w-full">
-                    <option value="">Select a label (or type below)</option>
-                    <option value="Motown Records">Motown Records</option>
-                    <option value="CBS Records">CBS Records</option>
-                    <option value="Epic Records">Epic Records</option>
-                </select>
-                <input type="text" name="record_label_custom" placeholder="Or type your own label" class="border p-2 rounded w-full">
                 <button class="bg-blue-600 text-white px-4 py-2 rounded">Add Song</button>
             </form>
         </div>
@@ -43,7 +36,6 @@
                     <tr>
                         <th class="border px-4 py-2 text-left">Title</th>
                         <th class="border px-4 py-2 text-left">Release Date</th>
-                        <th class="border px-4 py-2 text-left">Record Label</th>
                         <th class="border px-4 py-2">Actions</th>
                     </tr>
                 </thead>
@@ -52,7 +44,6 @@
                     <tr class="hover:bg-slate-100">
                         <td class="border px-4 py-2">{{ $song->title }}</td>
                         <td class="border px-4 py-2">{{ $song->release_date ? \Carbon\Carbon::parse($song->release_date)->format('F d, Y') : '-' }}</td>
-                        <td class="border px-4 py-2">{{ $song->record_label ?? '-' }}</td>
                         <td class="border px-4 py-2 flex gap-2 flex justify-around">
                             <form action="{{ route('songs.destroy', $song) }}" method="POST">
                                 @csrf

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Recordlabel;
 use Illuminate\Http\Request;
 
 class ArtistController extends Controller
@@ -69,7 +70,8 @@ class ArtistController extends Controller
     // Show form to edit an artist
     public function edit(Artist $artist)
     {
-        return view('artists.edit', compact('artist'));
+        $recordLabels = Recordlabel::all(); // this gets all the recordlabels
+        return view('artists.edit', compact('artist', 'recordLabels'));
     }
 
     // Update artist

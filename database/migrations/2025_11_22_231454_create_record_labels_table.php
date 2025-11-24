@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('record_labels', function (Blueprint $table) {
+Schema::create('recordlabels', function (Blueprint $table) {
     $table->id();
     $table->string('name');
     $table->timestamps();
@@ -25,6 +25,6 @@ Schema::create('record_labels', function (Blueprint $table) {
      */
     public function down(): void
     {
-        Schema::dropIfExists('record_labels');
+        Schema::dropIfExists('recordlabels');
     }
 };
