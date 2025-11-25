@@ -4,6 +4,7 @@
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\RecordlabelController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,7 +31,7 @@ Route::put('/artists/{artist}', [ArtistController::class, 'update'])->name('arti
 Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->name('artists.destroy');
 Route::resource('artists', ArtistController::class);                              // one to many relationship artist -> songs
 Route::resource('songs', SongController::class)->except(['index', 'show']);
-Route::resource('recordlabels', RecordLabelController::class);
+Route::resource('recordlabels', RecordlabelController::class);
 
 
 

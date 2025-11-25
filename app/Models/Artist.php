@@ -26,7 +26,7 @@ class Artist extends Model
         return $this->hasMany(Song::class);
     }
 
-public function recordLabels()
+public function recordlabels()
 {
         return $this->belongs(
         Recordlabel::class,

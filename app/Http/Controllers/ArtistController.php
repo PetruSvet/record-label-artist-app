@@ -70,8 +70,8 @@ class ArtistController extends Controller
     // Show form to edit an artist
     public function edit(Artist $artist)
     {
-        $recordLabels = Recordlabel::all(); // this gets all the recordlabels
-        return view('artists.edit', compact('artist', 'recordLabels'));
+        $recordlabels = Recordlabel::all(); // this gets all the recordlabels
+        return view('artists.edit', compact('artist', 'recordlabels'));
     }
 
     // Update artist

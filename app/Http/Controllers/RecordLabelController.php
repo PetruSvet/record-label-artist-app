@@ -2,70 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recordlabel;
 use Illuminate\Http\Request;
 
-class RecordLabelController extends Controller
+class RecordlabelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $recordLabels = Recordlabel::all();
-        return view('recordlabels.index', compact('recordLabels'));
+        $recordlabels = Recordlabel::all();
+        return view('recordlabels.index', compact('recordlabels'));
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Show form to create new record label
     public function create()
     {
-        //
+        return view('recordlabels.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Store new record label in database
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'founded' => 'nullable|string|max:255',
+        ]);
+
+        Recordlabel::create($validated);
+
+        return redirect()
+            ->route('recordlabels.index')
+            ->with('success', 'Record label added!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Recordlabel $recordlabel)
     {
         return view('recordlabels.edit', compact('recordlabel'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Recordlabel $recordlabel)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'founded' => 'nullable|string|max:255',
         ]);
+
         $recordlabel->update($validated);
-        return redirect()->route('recordlabels.index')->with('success', 'Record label updated!');
+
+        return redirect()
+            ->route('recordlabels.index')
+            ->with('success', 'Record label updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Recordlabel $recordlabel)
     {
         $recordlabel->delete();
-        return redirect()->route('recordlabels.index')->with('success', 'Record label deleted!');
+
+        return redirect()
+            ->route('recordlabels.index')
+            ->with('success', 'Record label deleted!');
     }
 }

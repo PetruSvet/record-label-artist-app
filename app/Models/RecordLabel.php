@@ -12,6 +12,7 @@ class Recordlabel extends Model
 
     protected $fillable = [
         'name',
+        'founded',
         'headquarters',
         'phone number',
     ];
