@@ -33,7 +33,7 @@ class ArtistController extends Controller
             'genre' => 'required|string|max:255',
             'debut_year' => 'required|integer|min:1900|max:' . date('Y'),
             'social_media_handle' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
+            'description' => 'required',
             'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'embed' => 'nullable|url',
         ]);
@@ -82,7 +82,7 @@ class ArtistController extends Controller
             'genre' => 'required|string|max:255',
             'debut_year' => 'required|integer|min:1900|max:' . date('Y'),
             'social_media_handle' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
+            'description' => 'required',
             'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'embed' => 'required|string'
         ]);

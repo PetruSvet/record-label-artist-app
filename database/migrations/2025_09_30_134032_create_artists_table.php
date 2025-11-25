@@ -19,7 +19,7 @@ public function up(): void
         $table->string('social_media_handle')->nullable();
         $table->timestamps();
         $table->string('profile_picture')->nullable();
-        $table->string('description')->nullable();
+        $table->mediumText('description')->nullable();
         $table->string('embed')->nullable();
     });
 }

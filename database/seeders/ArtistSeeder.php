@@ -54,6 +54,17 @@ class ArtistSeeder extends Seeder
                 'profile_picture' => '1762267662_Michael_Jackson_1983_(3x4_cropped)_(contrast).jpeg',
                 'description' => 'Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the "King of Pop", he is widely regarded as one of the most culturally significant figures of the 20th century'
             ],
+            [
+
+                'name' => 'Taylor Swift',
+                'genre' => 'Pop',
+                'debut_year' => 2003,
+                'social_media_handle' => '@taylorswift',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'profile_picture' => '1764084401.jpg',
+                'description' => 'Taylor Alison Swift is an American singer-songwriter. An influential figure in popular culture, she is known for her autobiographical songwriting and artistic reinventions. Swift is the highest-grossing live music artist, the wealthiest female musician, and one of the best-selling music artists of all time.'     
+            ],
         ]);
     }
 }

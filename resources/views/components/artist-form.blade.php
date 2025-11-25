@@ -76,4 +76,11 @@
             <img src="{{ asset('images/artists/' . $artist->profile_picture) }}" alt="{{ $artist->name }}" class="w-24 h-24 object-cover rounded-full">
         </div>
     @endisset
+
+    {{-- Submit Button --}}
+    <div>
+        <x-primary-button>
+            {{ isset($artist) ? 'Update Artist' : 'Add Artist' }}
+        </x-primary-button>
+    </div>
 </form>

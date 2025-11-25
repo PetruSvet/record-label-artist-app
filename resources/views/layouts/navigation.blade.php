@@ -15,15 +15,27 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('artists.index')" :activate="request()->routeIs('artists.index')">
+                    <x-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
                         {{__('View Artists')}}
                     </x-nav-link> 
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('recordlabels.index')" :active="request()->routeIs('recordlabels.index')">
+                            {{ __(' View Record Labels') }}
+                        </x-nav-link>
+                    </div>
+
+
                     <!-- create link for admins only -->
                     @if(auth()->user()->role === 'admin')
-                                        <x-nav-link :href="route('artists.create')" :activate="request()->routeIs('artists.create')">
-                        {{__('Create Artist')}}
-                    </x-nav-link>
+                        <x-nav-link :href="route('artists.create')" :active="request()->routeIs('artists.create')">
+                            {{ __('Create Artist') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('recordlabels.create')" :active="request()->routeIs('recordlabels.create')">
+                            {{ __('Create Record Label') }}
+                        </x-nav-link>
                     @endif
+
                 </div>
             </div>
  

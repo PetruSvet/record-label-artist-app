@@ -14,8 +14,10 @@ $validated = $request->validate([
     'title' => 'required|string|max:255',
     'release_date' => 'nullable|date',
     'artist_id' => 'required|exists:artists,id',
-    'recordlabel_id' => 'nullable|exists:recordlabels,id',
+    'genre' => 'nullable|string|max:255',
+    'duration' => 'nullable|string|max:50',
 ]);
+
 
 Song::create($validated);
 

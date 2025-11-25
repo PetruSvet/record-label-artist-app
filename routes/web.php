@@ -30,6 +30,8 @@ Route::put('/artists/{artist}', [ArtistController::class, 'update'])->name('arti
 Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->name('artists.destroy');
 Route::resource('artists', ArtistController::class);                              // one to many relationship artist -> songs
 Route::resource('songs', SongController::class)->except(['index', 'show']);
+Route::resource('recordlabels', RecordLabelController::class);
+
 
 
 require __DIR__.'/auth.php';
