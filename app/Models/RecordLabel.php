@@ -14,7 +14,7 @@ class Recordlabel extends Model
         'name',
         'founded',
         'headquarters',
-        'phone number',
+        'phone_number',
     ];
 
     // Relationship: a record label can have many artists

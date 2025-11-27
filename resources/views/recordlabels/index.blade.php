@@ -27,6 +27,8 @@
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Founded</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Headquarters</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact Number</th>
                             <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
@@ -36,6 +38,8 @@
                             <tr class="hover:bg-gray-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-gray-800 font-medium">{{ $label->name }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-gray-600">{{ $label->founded ?? '-' }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-600">{{ $label->headquarters ?? '-' }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-gray-600">{{ $label->phone_number ?? '-' }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right flex gap-2 justify-end">
                                     <a href="{{ route('recordlabels.edit', $label) }}"
                                        class="bg-orange-300 hover:bg-orange-500 text-gray-800 py-1 px-3 rounded transition duration-150">

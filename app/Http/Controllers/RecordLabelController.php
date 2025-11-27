@@ -25,6 +25,8 @@ class RecordlabelController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'founded' => 'nullable|string|max:255',
+            'headquarters' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|string|max:255',
         ]);
 
         Recordlabel::create($validated);
@@ -44,6 +46,8 @@ class RecordlabelController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'founded' => 'nullable|string|max:255',
+            'headquarters' => 'nullable|string|max:255',
+            'phone_number' => 'nullable|string|max:255',
         ]);
 
         $recordlabel->update($validated);

@@ -14,6 +14,9 @@ return new class extends Migration
 Schema::create('recordlabels', function (Blueprint $table) {
     $table->id();
     $table->string('name');
+    $table->string('founded')->nullable();
+    $table->string('headquarters')->nullable();
+    $table->string('phone_number')->nullable();
     $table->timestamps();
 });
 
