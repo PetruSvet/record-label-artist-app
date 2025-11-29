@@ -8,11 +8,12 @@
     <div class="container mx-auto px-4 py-8">
 
         <!-- Artist Form Fields -->
-        <x-artist-form 
-            :action="route('artists.update', $artist)" 
-            method="PUT"
-            :artist="$artist"
-        />
+       <x-artist-form 
+    :action="route('artists.update', $artist)" 
+    method="PUT"
+    :artist="$artist"
+    :labels="$labels"
+/>
 
             <!-- Add Song Form -->
             @if(auth()->user()->role === 'admin')

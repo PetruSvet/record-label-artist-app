@@ -16,8 +16,13 @@
             :profile_picture="$artist->profile_picture"
             :description="$artist->description"
             :embed="$artist->embed"
+            :record_label="$artist->recordlabel->name ?? 'No label assigned'" 
         />
 
+<p class="text-gray-700">
+    <strong>Record Label:</strong>
+    {{ $artist->recordlabel->name ?? 'No label assigned' }}
+</p>
 
 
         <!-- Discography Table -->

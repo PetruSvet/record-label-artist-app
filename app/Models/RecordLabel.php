@@ -18,13 +18,12 @@ class Recordlabel extends Model
     ];
 
     // Relationship: a record label can have many artists
-    public function artists()
-    {
-            return $this->belongsToMany(
-        Artist::class,
-        'recordlabel_artist',
-        'recordlabel_id',
-        'artist_id'
-    );
-    }
+    // Recordlabel.php
+public function artists()
+{
+    return $this->belongsToMany(Artist::class);
+}
+
+
+    
 }

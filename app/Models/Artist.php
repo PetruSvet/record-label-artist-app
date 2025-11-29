@@ -18,6 +18,7 @@ class Artist extends Model
         'description',
         'profile_picture',
         'embed',
+        'recordlabel_id',
     ];
 
     // relationship: one artist has many songs
@@ -28,14 +29,10 @@ class Artist extends Model
 
 public function recordlabels()
 {
-        return $this->belongs(
-        Recordlabel::class,
-        'artist_recordlabel',
-        'artist_id',
-        'release_date',
-        'recordlabel_id'
-    );
+    return $this->belongsToMany(Recordlabel::class);
 }
+
+
 
 }
 

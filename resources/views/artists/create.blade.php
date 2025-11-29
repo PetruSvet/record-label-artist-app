@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">          <!-- Page header showing the title -->
-            {{ __('Create New Artist') }}
-        </h2>
+        <h2 class="font-semibold text-xl">Create Artist</h2>
     </x-slot>
 
-    <div class="container mx-auto px-4 py-8">
-        <x-artist-form :action="route('artists.store')" method="POST" />        <!-- Include the artist form component and pass the store route and method -->
+    <x-alert-success />
+
+    <div class="py-12 max-w-4xl mx-auto">
+        <x-artist-form :action="route('artists.store')" method="POST" :artist="null" :labels="$labels" />
     </div>
 </x-app-layout>
