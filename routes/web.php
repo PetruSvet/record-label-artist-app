@@ -32,6 +32,8 @@ Route::delete('/artists/{artist}', [ArtistController::class, 'destroy'])->name('
 Route::resource('artists', ArtistController::class);                              // one to many relationship artist -> songs
 Route::resource('songs', SongController::class)->except(['index', 'show']);
 Route::resource('recordlabels', RecordlabelController::class);
+Route::get('/artists/{artist}', [ArtistController::class, 'show'])->name('artists.show');
+
 
 
 

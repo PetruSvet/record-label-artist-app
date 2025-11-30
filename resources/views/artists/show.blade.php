@@ -8,21 +8,20 @@
     <div class="container mx-auto px-4 py-8">
 
         <!-- Artist Details -->
-        <x-artist-details 
-            :name="$artist->name" 
-            :genre="$artist->genre" 
-            :debut_year="$artist->debut_year" 
-            :social_media_handle="$artist->social_media_handle" 
-            :profile_picture="$artist->profile_picture"
-            :description="$artist->description"
-            :embed="$artist->embed"
-            :record_label="$artist->recordlabel->name ?? 'No label assigned'" 
-        />
+<x-artist-details 
+    :name="$artist->name"
+    :genre="$artist->genre"
+    :debut_year="$artist->debut_year"
+    :social_media_handle="$artist->social_media_handle"
+    :profile_picture="$artist->profile_picture"
+    :description="$artist->description"
+    :embed="$artist->embed"
+    :recordlabels="$artist->recordlabels"
+/>
 
-<p class="text-gray-700">
-    <strong>Record Label:</strong>
-    {{ $artist->recordlabel->name ?? 'No label assigned' }}
-</p>
+
+
+
 
 
         <!-- Discography Table -->
@@ -34,7 +33,6 @@
         <th class="border px-4 py-2 text-left">Release Date</th>
         <th class="border px-4 py-2 text-left">Genre</th>
         <th class="border px-4 py-2 text-left">Duration</th>
-        <th class="border px-4 py-2 text-center">Actions</th>
     </tr>
 </thead>
 <tbody>
@@ -53,19 +51,12 @@
         <td class="border px-4 py-2">
             {{ $song->duration ?? '-' }}
         </td>
-
-        <td class="border px-4 py-2 text-center">
-            <form action="{{ route('songs.destroy', $song) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
-            </form>
-        </td>
     </tr>
     @endforeach
 </tbody>
 </table>
 
+<!--NOT DISPLAYING ACTIONS HERE SO THAT USER CANNOT EDIT SONGS AND NO NEED FOR ADMIN TOO HE CAN JUST USE THE EDIT FEATURE TO DELETE A SONG OR ADD ONE -->
 
 <!-- Show message if no songs are present -->
 @if($artist->songs->isEmpty())

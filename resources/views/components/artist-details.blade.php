@@ -1,13 +1,15 @@
 @props([
-    'name', 
-    'genre', 
-    'debut_year', 
-    'social_media_handle', 
-    'profile_picture' => null, 
-    'description' => null, 
+    //artist information being passed down from controller
+    'name',
+    'genre',
+    'debut_year',
+    'social_media_handle',
+    'profile_picture' => null,
+    'description' => null,
     'embed' => null,
-    'record_label' => 'No label assigned'
+    'recordlabels' => collect(),   
 ])
+
 
 <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 p-6">
 
@@ -23,10 +25,16 @@
         <h2 class="text-2xl font-bold text-gray-800">{{ $name }}</h2>
         <p class="text-gray-600">{{ $genre }} • Debut: {{ $debut_year }}</p>
 
-        {{-- Record Label --}}
-        <p class="text-gray-700 mt-2">
-            <strong>Record Label:</strong> {{ $record_label }}
-        </p>
+{{-- Record Labels --}}
+<p class="text-gray-700 mt-2">
+    <strong>Record Labels:</strong>
+    @if($recordlabels->count() > 0)
+        {{ $recordlabels->pluck('name')->join(', ') }}
+    @else
+        No record labels assigned.
+    @endif
+</p>
+
 
         {{-- Social media link --}}
         @if($social_media_handle)

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RecordlabelSeeder::class,
             ArtistSeeder::class,
+            SongSeeder::class,
         ]);
     }
 }

@@ -15,7 +15,7 @@ public function up(): void
         $table->id();
         $table->string('title');
         $table->string('genre')->nullable();
-        $table->integer('duration')->nullable(); // optional
+        $table->string('duration', 50)->nullable();
         $table->foreignId('artist_id')->constrained()->onDelete('cascade');
         $table->timestamps();
     });
